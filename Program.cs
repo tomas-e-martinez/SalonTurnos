@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using SalonTurnos.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<SalonTurnosContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SalonTurnosConnection")));
 
 var app = builder.Build();
 
