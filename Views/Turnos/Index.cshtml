@@ -1,0 +1,27 @@
+﻿@model IEnumerable<SalonTurnos.Models.Turno>
+
+@{
+	ViewData["Title"] = "Turnos";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Fecha y Hora</th>
+			<th>Disponible</th>
+			<th>Salón</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var turno in Model)
+		{
+			<tr>
+				<td>@turno.FechaHora</td>
+				<td>@turno.Disponible</td>
+				<td>@turno.SalonId</td>
+			</tr>
+		}
+	</tbody>
+</table>
